@@ -10,13 +10,13 @@ import 'package:flutter/widgets.dart';
 // import 'package:demo_andres_garcia_needzaio/screens/login_unsuccess/login_unsuccess_screen.dart';
 // import 'package:demo_andres_garcia_needzaio/screens/otp/otp_screen.dart';
 // import 'package:demo_andres_garcia_needzaio/screens/request_service/request_service_screen.dart';
-// import 'package:demo_andres_garcia_needzaio/screens/sign_in/sign_in_screen.dart';
 // import 'package:demo_andres_garcia_needzaio/screens/sign_up/sign_up_screen.dart';
 import 'package:demo_andres_garcia_needzaio/screens/splash/splash_screen.dart';
+import 'package:demo_andres_garcia_needzaio/screens/sign_in/sign_in_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
-  // SignInScreen.routeName: (context) => SignInScreen(),
+  SignInScreen.routeName: (context) => SignInScreen(),
   // ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
   // LoginSuccessScreen.routeName: (context) => LoginSuccessScreen(),
   // LoginUnsuccessScreen.routeName: (context) => LoginUnsuccessScreen(),

@@ -14,6 +14,7 @@ class DefaultButton extends StatelessWidget {
     this.press,
     this.backgroundColor = kPrimaryColor,
     this.textColor = Colors.white,
+    this.splashColor = kPrimaryColor,
     this.fontWeight = FontWeight.bold,
   }) : super(key: key);
   final String text;
@@ -21,6 +22,7 @@ class DefaultButton extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
   final FontWeight fontWeight;
+  final Color splashColor;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class DefaultButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(25),
         ),
         child: InkWell(
-          splashColor: kPrimaryColor,
+          splashColor: splashColor,
           onTap: press,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
