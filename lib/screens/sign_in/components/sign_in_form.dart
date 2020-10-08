@@ -7,7 +7,6 @@ import 'dart:async';
 import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProvider.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_progress_hud/flutter_progress_hud.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:demo_andres_garcia_needzaio/constants.dart';
 import 'package:demo_andres_garcia_needzaio/size_config.dart';
@@ -75,7 +74,7 @@ class _SignInFormState extends State<SignInForm> {
                         for (var item in widget.nodesText) {
                           item.unfocus();
                         }
-                        var loadingProgressProvider = Provider.of<LoadingProgress>(context, listen: false);
+                        var loadingProgressProvider = Provider.of<LoadingProgressProvider>(context, listen: false);
                         loadingProgressProvider.startLoadingProgress();
                         bool authValid = await signInWithEmail(email: _email, password: _password);
                         Future.delayed(Duration(seconds: 3), () {

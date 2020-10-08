@@ -3,7 +3,7 @@
 // All rights reserved.
 
 import 'package:demo_andres_garcia_needzaio/constants.dart';
-import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProvider.dart';
+import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProgressProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_andres_garcia_needzaio/screens/sign_in/components/sign_in_body.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
@@ -21,7 +21,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     bool loadingProgress = false;
 
-    var loadingProgressProvider = Provider.of<LoadingProgress>(context);
+    var loadingProgressProvider = Provider.of<LoadingProgressProvider>(context);
     setState(() {
       loadingProgress = loadingProgressProvider.loadingProgress;
     });

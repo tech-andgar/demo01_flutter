@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 /// Mix-in [DiagnosticableTreeMixin] to have access to [debugFillProperties] for the devtool
-class LoadingProgress with ChangeNotifier, DiagnosticableTreeMixin {
+class LoadingProgressProvider with ChangeNotifier, DiagnosticableTreeMixin {
   bool _loadingProgress = false;
   bool get loadingProgress => _loadingProgress;
 

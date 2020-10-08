@@ -3,7 +3,7 @@
 // All rights reserved.
 
 import 'package:demo_andres_garcia_needzaio/constants.dart';
-import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProvider.dart';
+import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProgressProvider.dart';
 import 'package:demo_andres_garcia_needzaio/routes.dart';
 import 'package:demo_andres_garcia_needzaio/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => LoadingProgress()),
+        ChangeNotifierProvider(create: (_) => LoadingProgressProvider()),
       ],
       child: MyApp(),
     ),
