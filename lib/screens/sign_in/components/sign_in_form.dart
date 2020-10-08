@@ -4,7 +4,7 @@
 
 import 'dart:async';
 
-import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProvider.dart';
+import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProgressProvider.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -76,16 +76,16 @@ class _SignInFormState extends State<SignInForm> {
                         }
                         var loadingProgressProvider = Provider.of<LoadingProgressProvider>(context, listen: false);
                         loadingProgressProvider.startLoadingProgress();
-                        bool authValid = await signInWithEmail(email: _email, password: _password);
+                        // bool authValid = await signInWithEmail(email: _email, password: _password);
                         Future.delayed(Duration(seconds: 3), () {
                           loadingProgressProvider.stopLoadingProgress();
                         });
 
-                        if (authValid) {
-                          // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
-                        } else {
-                          // Navigator.pushNamed(context, LoginUnsuccessScreen.routeName);
-                        }
+                        // if (authValid) {
+                        //   // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                        // } else {
+                        //   // Navigator.pushNamed(context, LoginUnsuccessScreen.routeName);
+                        // }
                       }
                     },
             ),
