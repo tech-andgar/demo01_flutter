@@ -2,14 +2,19 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
+import 'dart:async';
+
+import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProvider.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_progress_hud/flutter_progress_hud.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:demo_andres_garcia_needzaio/constants.dart';
 import 'package:demo_andres_garcia_needzaio/size_config.dart';
 import 'package:demo_andres_garcia_needzaio/components/button/default_button.dart';
 import 'package:demo_andres_garcia_needzaio/components/custom_surffix_icon.dart';
 import 'package:demo_andres_garcia_needzaio/screens/sign_in/components/form_error.dart';
+import 'package:provider/provider.dart';
 
 class SignInForm extends StatefulWidget {
   final List<FocusNode> nodesText;
@@ -67,12 +72,21 @@ class _SignInFormState extends State<SignInForm> {
                   : () async {
                       if (_formKey.currentState.validate()) {
                         _formKey.currentState.save();
-                        // bool authValid = await signInWithEmail(email: _email, password: _password);
-                        // if (authValid) {
-                        //   Navigator.pushNamed(context, LoginSuccessScreen.routeName);
-                        // } else {
-                        //   Navigator.pushNamed(context, LoginUnsuccessScreen.routeName);
-                        // }
+                        for (var item in widget.nodesText) {
+                          item.unfocus();
+                        }
+                        var loadingProgressProvider = Provider.of<LoadingProgress>(context, listen: false);
+                        loadingProgressProvider.startLoadingProgress();
+                        bool authValid = await signInWithEmail(email: _email, password: _password);
+                        Future.delayed(Duration(seconds: 3), () {
+                          loadingProgressProvider.stopLoadingProgress();
+                        });
+
+                        if (authValid) {
+                          // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                        } else {
+                          // Navigator.pushNamed(context, LoginUnsuccessScreen.routeName);
+                        }
                       }
                     },
             ),

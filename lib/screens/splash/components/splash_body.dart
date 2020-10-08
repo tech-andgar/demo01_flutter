@@ -84,7 +84,7 @@ class _SplashBodyState extends State<SplashBody> {
                       padding: EdgeInsets.symmetric(horizontal: getProportionteScreenWidth(30)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
+                        children: [
                           Text(
                             kTextTitleApp,
                             style: GoogleFonts.montserrat(
