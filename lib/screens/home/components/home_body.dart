@@ -2,10 +2,12 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
+import 'package:demo_andres_garcia_needzaio/components/custom_list_item.dart';
+import 'package:demo_andres_garcia_needzaio/constants.dart';
+import 'package:demo_andres_garcia_needzaio/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:demo_andres_garcia_needzaio/size_config.dart';
-import 'package:demo_andres_garcia_needzaio/components/custom_list_item.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
 class HomeBody extends StatefulWidget {
   HomeBody({Key key}) : super(key: key);
@@ -14,6 +16,28 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
+  String queryGetAllUsers = """
+  query ReadRepositories() {
+    users {
+      data {
+        id
+        name
+        email
+        phone
+        albums{
+          data{
+            photos{
+              data{
+                thumbnailUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+""";
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,15 +63,62 @@ class _HomeBodyState extends State<HomeBody> {
               ),
               SizedBox(height: getProportionteScreenHeight(20)),
               Expanded(
-                child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return CustomListItem(
-                      thumbnailURL: 'https://picsum.photos/350',
-                      fullName: 'Jorge Robles',
-                      email: 'gaitotraviso04',
-                      index: index,
-                    );
+                child: Query(
+                  options: QueryOptions(
+                    documentNode: gql(queryGetAllUsers), // this is the query string you just created
+                    // variables: {
+                    //   'nRepositories': 50,
+                    // },
+                    // pollInterval: 10,
+                  ),
+                  // Just like in apollo refetch() could be used to manually trigger a refetch
+                  // while fetchMore() can be used for pagination purpose
+                  builder: (QueryResult result, {VoidCallback refetch, FetchMore fetchMore}) {
+                    if (result.hasException) {
+                      return Text(result.exception.toString());
+                    }
+
+                    if (result.loading) {
+                      return Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              CircularProgressIndicator(
+                                strokeWidth: 10,
+                                valueColor: new AlwaysStoppedAnimation<Color>(kPrimaryColor),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    }
+
+                    // it can be either Map or List
+                    List usersList = result.data['users']['data'];
+
+                    if (usersList.length < 0) {
+                      return ListView.builder(
+                        itemCount: 1,
+                        itemBuilder: (context, index) {
+                          return Text('NO ENCONTRADO DATOS USUARIO');
+                        },
+                      );
+                    } else {
+                      return ListView.builder(
+                        itemCount: usersList.length,
+                        itemBuilder: (context, index) {
+                          final repository = usersList[index];
+                          return CustomListItem(
+                            thumbnailURL: repository.data["albums"]["data"][0]["photos"]["data"][1]['thumbnailUrl'],
+                            fullName: repository.data['name'],
+                            email: repository.data['email'],
+                            index: index,
+                          );
+                        },
+                      );
+                    }
                   },
                 ),
               ),
