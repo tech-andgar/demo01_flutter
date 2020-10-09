@@ -2,17 +2,18 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
-import 'dart:async';
 
+import 'dart:async';
+import 'package:demo_andres_garcia_needzaio/components/button/default_button.dart';
+import 'package:demo_andres_garcia_needzaio/components/custom_surffix_icon.dart';
+import 'package:demo_andres_garcia_needzaio/constants.dart';
 import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProgressProvider.dart';
+import 'package:demo_andres_garcia_needzaio/screens/home/home_screen.dart';
+import 'package:demo_andres_garcia_needzaio/screens/sign_in/components/form_error.dart';
+import 'package:demo_andres_garcia_needzaio/size_config.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:demo_andres_garcia_needzaio/constants.dart';
-import 'package:demo_andres_garcia_needzaio/size_config.dart';
-import 'package:demo_andres_garcia_needzaio/components/button/default_button.dart';
-import 'package:demo_andres_garcia_needzaio/components/custom_surffix_icon.dart';
-import 'package:demo_andres_garcia_needzaio/screens/sign_in/components/form_error.dart';
 import 'package:provider/provider.dart';
 
 class SignInForm extends StatefulWidget {
@@ -82,7 +83,7 @@ class _SignInFormState extends State<SignInForm> {
                         });
 
                         // if (authValid) {
-                        //   // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                          Navigator.pushNamed(context, HomeScreen.routeName);
                         // } else {
                         //   // Navigator.pushNamed(context, LoginUnsuccessScreen.routeName);
                         // }
