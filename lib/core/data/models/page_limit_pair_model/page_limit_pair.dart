@@ -14,5 +14,5 @@ abstract class PageLimitPair with _$PageLimitPair {
   }) = _PageLimitPair;
 
 
-  factory PageLimitPair.fromJson(Map<String, dynamic json>) => _$PageLimitPairFromJson(json);
+  // factory PageLimitPair.fromJson(Map<String, dynamic json>) => _$PageLimitPairFromJson(json);
 }

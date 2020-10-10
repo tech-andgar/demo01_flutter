@@ -17,5 +17,5 @@ abstract class Photo with _$Photo {
     Album album,
   }) = _Photo;
 
-  factory Photo.fromJson(Map<String, dynamic json>) => _$PhotoFromJson(json);
+  // factory Photo.fromJson(Map<String, dynamic json>) => _$PhotoFromJson(json);
 }

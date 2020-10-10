@@ -9,10 +9,14 @@ part 'geo.g.dart';
 @freezed
 abstract class Geo with _$Geo {
   const factory Geo({
-  double lat,
-  double lng,
+    double lat,
+    double lng,
   }) = _Geo;
 
-
-  factory Geo.fromJson(Map<String, dynamic json>) => _$GeoFromJson(json);
+  static Geo fromJson(Map<String, dynamic> json) {
+    return Geo(
+      lat: (json['lat'] as num)?.toDouble(),
+      lng: (json['lng'] as num)?.toDouble(),
+    );
+  }
 }

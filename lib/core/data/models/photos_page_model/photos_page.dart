@@ -2,7 +2,6 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
-
 import 'package:demo_andres_garcia_needzaio/core/data/models/page_metadata/page_metadata.dart';
 import 'package:demo_andres_garcia_needzaio/core/data/models/pagination_links_model/pagination_links.dart';
 import 'package:demo_andres_garcia_needzaio/core/data/models/photo_model/photo.dart';
@@ -19,5 +18,6 @@ abstract class PhotosPage with _$PhotosPage {
   }) = _PhotosPage;
 
 
-  factory PhotosPage.fromJson(Map<String, dynamic json>) => _$PhotosPageFromJson(json);
+  // ignore: non_constant_identifier_names
+  // factory PhotosPage.fromJson(Map<String, dynamic json>) => _$PhotosPageFromJson(json);
 }

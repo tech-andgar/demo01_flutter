@@ -10,14 +10,23 @@ part 'address.g.dart';
 @freezed
 abstract class Address with _$Address {
   const factory Address({
-      String street,
-      String suite,
-      String city,
-      String zipcode,
-      Geo geo,
+    String street,
+    String suite,
+    String city,
+    String zipcode,
+    Geo geo,
   }) = _Address;
 
+  static Address fromJson(Map<String, dynamic> json) {
+    return Address(
+      street: json['street'] as String,
+      suite: json['suite'] as String,
+      city: json['city'] as String,
+      zipcode: json['zipcode'] as String,
+      geo: json['geo'] == null ? null : Geo.fromJson(json['geo']),
+    );
+  }
 
   // ignore: non_constant_identifier_names
-  factory Address.fromJson(Map<String, dynamic json>) => _$AddressFromJson(json);
+  // factory Address.fromJson(Map<String, dynamic json>) => _$AddressFromJson(json);
 }

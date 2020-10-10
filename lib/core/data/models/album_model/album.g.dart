@@ -11,7 +11,7 @@ _$_Album _$_$_AlbumFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     title: json['title'] as String,
     user: json['user'] == null ? null : User.fromJson(json['user']),
-    photos: json['photos'] == null ? null : PhotosPage.fromJson(json['photos']),
+    // photos: json['photos'] == null ? null : PhotosPage.fromJson(json['photos']),
   );
 }
 

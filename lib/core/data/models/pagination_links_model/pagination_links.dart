@@ -17,5 +17,5 @@ abstract class PaginationLinks with _$PaginationLinks {
   }) = _PaginationLinks;
 
 
-  factory PaginationLinks.fromJson(Map<String, dynamic json>) => _$PaginationLinksFromJson(json);
+  // factory PaginationLinks.fromJson(Map<String, dynamic json>) => _$PaginationLinksFromJson(json);
 }

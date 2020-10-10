@@ -13,5 +13,5 @@ abstract class PageMetadata with _$PageMetadata {
   }) = _PageMetadata;
 
 
-  factory PageMetadata.fromJson(Map<String, dynamic json>) => _$PageMetadataFromJson(json);
+  // factory PageMetadata.fromJson(Map<String, dynamic json>) => _$PageMetadataFromJson(json);
 }

@@ -9,11 +9,16 @@ part 'company.g.dart';
 @freezed
 abstract class Company with _$Company {
   const factory Company({
-  String name,
-  String catchPhrase,
-  String bs,
+    String name,
+    String catchPhrase,
+    String bs,
   }) = _Company;
 
-
-  factory Company.fromJson(Map<String, dynamic json>) => _$CompanyFromJson(json);
+  static Company fromJson(Map<String, dynamic> json) {
+    return Company(
+      name: json['name'] as String,
+      catchPhrase: json['catchPhrase'] as String,
+      bs: json['bs'] as String,
+    );
+  }
 }

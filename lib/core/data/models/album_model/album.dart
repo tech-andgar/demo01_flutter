@@ -14,9 +14,9 @@ abstract class Album with _$Album {
     String id,
     String title,
     User user,
-    PhotosPage photos/* (options: PageQueryOptions )*/
+    PhotosPage photos
   }) = _Album;
 
 
-  factory Album.fromJson(Map<String, dynamic json>) => _$AlbumFromJson(json);
+  // factory Album.fromJson(Map<String, dynamic json>) => _$AlbumFromJson(json);
 }

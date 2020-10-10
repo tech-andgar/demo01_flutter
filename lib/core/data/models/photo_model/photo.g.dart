@@ -12,7 +12,7 @@ _$_Photo _$_$_PhotoFromJson(Map<String, dynamic> json) {
     title: json['title'] as String,
     url: json['url'] as String,
     thumbnailUrl: json['thumbnailUrl'] as String,
-    album: json['album'] == null ? null : Album.fromJson(json['album']),
+    // album: json['album'] == null ? null : Album.fromJson(json['album']),
   );
 }
 
