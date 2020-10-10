@@ -3,9 +3,9 @@
 // All rights reserved.
 
 
-import 'package:demo_andres_garcia_needzaio/data/models/page_metadata/page_metadata.dart';
-import 'package:demo_andres_garcia_needzaio/data/models/pagination_links_model/pagination_links.dart';
-import 'package:demo_andres_garcia_needzaio/data/models/photo_model/photo.dart';
+import 'package:demo_andres_garcia_needzaio/core/data/models/page_metadata/page_metadata.dart';
+import 'package:demo_andres_garcia_needzaio/core/data/models/pagination_links_model/pagination_links.dart';
+import 'package:demo_andres_garcia_needzaio/core/data/models/photo_model/photo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'photos_page.freezed.dart';
 part 'photos_page.g.dart';

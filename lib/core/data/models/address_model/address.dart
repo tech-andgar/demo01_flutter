@@ -2,7 +2,7 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
-import 'package:demo_andres_garcia_needzaio/data/models/geo_model/geo.dart';
+import 'package:demo_andres_garcia_needzaio/core/data/models/geo_model/geo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'address.freezed.dart';
 part 'address.g.dart';

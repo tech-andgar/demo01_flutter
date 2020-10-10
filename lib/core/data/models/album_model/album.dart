@@ -2,8 +2,8 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
-import 'package:demo_andres_garcia_needzaio/data/models/photos_page_model/photos_page.dart';
-import 'package:demo_andres_garcia_needzaio/data/models/user_model/user.dart';
+import 'package:demo_andres_garcia_needzaio/core/data/models/photos_page_model/photos_page.dart';
+import 'package:demo_andres_garcia_needzaio/core/data/models/user_model/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'album.freezed.dart';
 part 'album.g.dart';
