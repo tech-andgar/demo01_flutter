@@ -2,9 +2,9 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
-import 'package:demo_andres_garcia_needzaio/components/custom_list_item.dart';
-import 'package:demo_andres_garcia_needzaio/constants.dart';
-import 'package:demo_andres_garcia_needzaio/size_config.dart';
+import 'package:demo_andres_garcia_needzaio/ui/components/custom_list_item.dart';
+import 'package:demo_andres_garcia_needzaio/ui/constants.dart';
+import 'package:demo_andres_garcia_needzaio/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';

@@ -7,10 +7,10 @@
 // import 'package:demo_andres_garcia_needzaio/screens/splash/components/splash_content.dart';
 // import 'package:demo_andres_garcia_needzaio/services/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:demo_andres_garcia_needzaio/components/button/default_button.dart';
-import 'package:demo_andres_garcia_needzaio/constants.dart';
-import 'package:demo_andres_garcia_needzaio/size_config.dart';
-import 'package:demo_andres_garcia_needzaio/screens/sign_in/sign_in_screen.dart';
+import 'package:demo_andres_garcia_needzaio/ui/components/button/default_button.dart';
+import 'package:demo_andres_garcia_needzaio/ui/constants.dart';
+import 'package:demo_andres_garcia_needzaio/ui/size_config.dart';
+import 'package:demo_andres_garcia_needzaio/ui/screens/sign_in/sign_in_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:location/location.dart';
 

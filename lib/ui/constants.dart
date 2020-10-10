@@ -3,7 +3,7 @@
 // All rights reserved.
 
 import 'package:flutter/material.dart';
-import 'package:demo_andres_garcia_needzaio/size_config.dart';
+import 'package:demo_andres_garcia_needzaio/ui/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const kTextTitleApp = 'USERAPP';

@@ -2,10 +2,10 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
-import 'package:demo_andres_garcia_needzaio/constants.dart';
-import 'package:demo_andres_garcia_needzaio/domain/usecases/loadingProgressProvider.dart';
+import 'package:demo_andres_garcia_needzaio/core/data/data_sources/loadingProgressProvider.dart';
+import 'package:demo_andres_garcia_needzaio/ui/constants.dart';
+import 'package:demo_andres_garcia_needzaio/ui/screens/sign_in/components/sign_in_body.dart';
 import 'package:flutter/material.dart';
-import 'package:demo_andres_garcia_needzaio/screens/sign_in/components/sign_in_body.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
 

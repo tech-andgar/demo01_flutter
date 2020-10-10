@@ -1,5 +1,5 @@
 
-import 'package:demo_andres_garcia_needzaio/constants.dart';
+import 'package:demo_andres_garcia_needzaio/ui/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

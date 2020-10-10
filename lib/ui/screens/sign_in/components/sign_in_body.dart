@@ -4,10 +4,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
-import 'package:demo_andres_garcia_needzaio/constants.dart';
-import 'package:demo_andres_garcia_needzaio/size_config.dart';
-import 'package:demo_andres_garcia_needzaio/screens/sign_in/components/sign_in_no_account_text.dart';
-import 'package:demo_andres_garcia_needzaio/screens/sign_in/components/sign_in_form.dart';
+import 'package:demo_andres_garcia_needzaio/ui/constants.dart';
+import 'package:demo_andres_garcia_needzaio/ui/size_config.dart';
+import 'package:demo_andres_garcia_needzaio/ui/screens/sign_in/components/sign_in_no_account_text.dart';
+import 'package:demo_andres_garcia_needzaio/ui/screens/sign_in/components/sign_in_form.dart';
 
 class SignInBody extends StatefulWidget {
   @override

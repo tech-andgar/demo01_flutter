@@ -2,9 +2,9 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
-import 'package:demo_andres_garcia_needzaio/components/custom_icon_nav_bar_icons.dart';
-import 'package:demo_andres_garcia_needzaio/constants.dart';
-import 'package:demo_andres_garcia_needzaio/size_config.dart';
+import 'package:demo_andres_garcia_needzaio/ui/components/custom_icon_nav_bar_icons.dart';
+import 'package:demo_andres_garcia_needzaio/ui/constants.dart';
+import 'package:demo_andres_garcia_needzaio/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -22,10 +22,7 @@ class CustomAppBar extends PreferredSize {
     return AppBar(
       backgroundColor: Colors.white,
       shape: ContinuousRectangleBorder(
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(60),
-          bottomRight: Radius.circular(60)
-        ),
+        borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(60), bottomRight: Radius.circular(60)),
       ),
       title: GNav(
           gap: 8,
@@ -46,7 +43,10 @@ class CustomAppBar extends PreferredSize {
             GButton(
               icon: CustomIconNavBar.speech_bubble,
               text: 'Chat',
-              textStyle: GoogleFonts.montserrat(color: Colors.black, fontSize: getProportionteScreenWidth(12)),
+              textStyle: GoogleFonts.montserrat(
+                color: Colors.black,
+                fontSize: getProportionteScreenWidth(12),
+              ),
               iconColor: Colors.black,
               backgroundColor: kPrimaryColor,
               iconActiveColor: Colors.black,
