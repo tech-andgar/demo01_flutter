@@ -21,7 +21,10 @@ class NoAccountText extends StatelessWidget {
           Spacer(),
           Text(
             kNotHaveAccount,
-            style: TextStyle(fontSize: getProportionteScreenWidth(16), color: Colors.black.withOpacity(0.4)),
+            style: TextStyle(
+              fontSize: getProportionteScreenWidth(16),
+              color: Colors.black.withOpacity(0.4),
+            ),
           ),
           Spacer(),
           InkWell(
@@ -31,7 +34,8 @@ class NoAccountText extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: Text(
                 "Sign up".toUpperCase(),
-                style: TextStyle(fontSize: getProportionteScreenWidth(16), fontWeight: FontWeight.bold, color: kPrimaryColor),
+                style: TextStyle(
+                    fontSize: getProportionteScreenWidth(16), fontWeight: FontWeight.bold, color: kPrimaryColor),
               ),
             ),
           ),

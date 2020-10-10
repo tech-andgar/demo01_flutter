@@ -7,7 +7,7 @@ import 'package:demo_andres_garcia_needzaio/core/services/api_graphql_service.da
 import 'package:demo_andres_garcia_needzaio/locator.dart';
 import 'package:demo_andres_garcia_needzaio/ui/constants.dart';
 import 'package:demo_andres_garcia_needzaio/routes.dart';
-import 'package:demo_andres_garcia_needzaio/ui/screens/home/home_screen.dart';
+// import 'package:demo_andres_garcia_needzaio/ui/screens/home/home_screen.dart';
 import 'package:demo_andres_garcia_needzaio/ui/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,6 +15,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
+  setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: kTextTitleApp,
         initialRoute: SplashScreen.routeName,
+        // initialRoute: HomeScreen.routeName,
         routes: routes,
       ),
     );

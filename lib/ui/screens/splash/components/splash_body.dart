@@ -2,10 +2,6 @@
 // Andrés García <dev@tech-andgar.me>
 // All rights reserved.
 
-// import 'package:demo_andres_garcia_needzaio/domain/usecases/locationService.dart';
-// import 'package:demo_andres_garcia_needzaio/screens/home/home_screen.dart';
-// import 'package:demo_andres_garcia_needzaio/screens/splash/components/splash_content.dart';
-// import 'package:demo_andres_garcia_needzaio/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_andres_garcia_needzaio/ui/components/button/default_button.dart';
 import 'package:demo_andres_garcia_needzaio/ui/constants.dart';
@@ -62,6 +58,7 @@ class _SplashBodyState extends State<SplashBody> {
     });
 
     _locationData = await location.getLocation();
+    print(_locationData);
   }
 
   final text =
@@ -81,18 +78,23 @@ class _SplashBodyState extends State<SplashBody> {
                   Expanded(
                     flex: 1,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: getProportionteScreenWidth(30)),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: getProportionteScreenWidth(30),
+                      ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             kTextTitleApp,
                             style: GoogleFonts.montserrat(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: getProportionteScreenWidth(35)),
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: getProportionteScreenWidth(35),
+                            ),
                           ),
-                          Padding(padding: EdgeInsets.only(top: 18)),
+                          Padding(
+                            padding: EdgeInsets.only(top: 18),
+                          ),
                           Text(
                             "${text.substring(0, 130)}",
                             textAlign: TextAlign.center,
@@ -101,7 +103,9 @@ class _SplashBodyState extends State<SplashBody> {
                               fontSize: getProportionteScreenWidth(17),
                             ),
                           ),
-                          Padding(padding: EdgeInsets.only(top: 22)),
+                          Padding(
+                            padding: EdgeInsets.only(top: 22),
+                          ),
                           SizedBox(
                             width: double.infinity,
                             height: getProportionteScreenWidth(49),
@@ -118,7 +122,9 @@ class _SplashBodyState extends State<SplashBody> {
                                   : null,
                             ),
                           ),
-                          Padding(padding: EdgeInsets.only(bottom: 280)),
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 280),
+                          ),
                         ],
                       ),
                     ),

@@ -26,6 +26,7 @@ final kHeadingStyle = GoogleFonts.montserrat(
 );
 
 const String kNotHaveAccount = 'Don´t have an account?';
+const String kIncorrectAccountOrPass = 'Contraseña y/o nombre de cuenta incorrecto';
 const String kEmailNullError = 'Por favor escriba su email';
 const String kInvalidEmailError = 'Por favor escriba correctamente su email';
 const String kPassNullError = 'Por favor escriba su contraseña';

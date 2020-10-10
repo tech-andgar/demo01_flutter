@@ -1,3 +1,7 @@
+// Copyright (c) 2020,
+// Andrés García <dev@tech-andgar.me>
+// All rights reserved.
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:demo_andres_garcia_needzaio/ui/size_config.dart';

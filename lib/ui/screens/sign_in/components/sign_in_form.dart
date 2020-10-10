@@ -3,6 +3,7 @@
 // All rights reserved.
 
 import 'dart:async';
+import 'package:demo_andres_garcia_needzaio/core/services/authentication_service.dart';
 import 'package:demo_andres_garcia_needzaio/ui/components/button/default_button.dart';
 import 'package:demo_andres_garcia_needzaio/ui/components/custom_surffix_icon.dart';
 import 'package:demo_andres_garcia_needzaio/ui/constants.dart';
@@ -76,19 +77,21 @@ class _SignInFormState extends State<SignInForm> {
                         }
                         var loadingProgressProvider = Provider.of<LoadingProgressProvider>(context, listen: false);
                         loadingProgressProvider.startLoadingProgress();
-                        // bool authValid = await signInWithEmail(email: _email, password: _password);
+                        AuthenticationService authenticationService = AuthenticationService();
+
+                        bool authValid =
+                            await authenticationService.signInWithEmail(email: _email, password: _password);
                         Future.delayed(
-                          Duration(seconds: 3),
+                          Duration(seconds: 2),
                           () {
                             loadingProgressProvider.stopLoadingProgress();
-                            Navigator.pushNamed(context, HomeScreen.routeName);
+                            if (authValid) {
+                              Navigator.pushNamed(context, HomeScreen.routeName);
+                            } else {
+                              addError(error: kIncorrectAccountOrPass);
+                            }
                           },
                         );
-
-                        // if (authValid) {
-                        // } else {
-                        //   // Navigator.pushNamed(context, LoginUnsuccessScreen.routeName);
-                        // }
                       }
                     },
             ),
@@ -105,6 +108,9 @@ class _SignInFormState extends State<SignInForm> {
       keyboardType: TextInputType.visiblePassword,
       onSaved: (newValue) => _password = newValue,
       onChanged: (value) {
+        if (errors.contains(kIncorrectAccountOrPass)) {
+          removeError(error: kIncorrectAccountOrPass);
+        }
         if (value.isNotEmpty) {
           removeError(error: kPassNullError);
         }
@@ -150,6 +156,9 @@ class _SignInFormState extends State<SignInForm> {
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => _email = newValue,
       onChanged: (value) {
+        if (errors.contains(kIncorrectAccountOrPass)) {
+          removeError(error: kIncorrectAccountOrPass);
+        }
         if (value.isNotEmpty) {
           removeError(error: kEmailNullError);
         }
